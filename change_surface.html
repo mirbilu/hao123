@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>change_surface</title>
+    <link rel="stylesheet" href="css/change_surface.css">
+
+</head>
+
+<body id="a_body" class="old_body">
+    <div id="navo" class="old_nav">
+        <img src="img/richanglogo168_24.png" alt="lost">
+        <div>
+            <ul>
+                <li id="c_f">换肤：</li>
+                <li id="blue" onclick="change(blue)"></li>
+                <li id="yellow" onclick="change(yellow)"></li>
+                <li id="pink" onclick="change(pink)"></li>
+                <li id="orange" onclick="change(orange)"></li>
+            </ul>
+        </div>
+    </div>
+    <div id="b_body">
+        <img src="img/bd_logo1.png" alt="">
+        <form action="https://www.baidu.com/s" method="get" target="_blank">
+            <span class="input1">
+                    <!--输入框-->
+                    <input type="text" name="wd" value="">
+            </span>
+            <button type="submit" class="form_button">百度一下</button>
+        </form>
+    </div>
+    <script>
+    console.log(document.cookie);
+    var strcookie = document.cookie.split("=");
+    var storage = window.localStorage;
+    console.log(storage.a);
+    function change(change_color) {
+        if (change_color == blue) {
+            document.getElementById('navo').className = "blue_nav";
+            document.getElementById('a_body').className = 'blue_body';
+            document.cookie = "backcolor=blue";
+            storage.a="blue";
+        } else if (change_color == yellow) {
+            document.getElementById('navo').className = "yellow_nav";
+            document.getElementById('a_body').className = 'yellow_body';
+            document.cookie = "backcolor=yellow";
+            storage.a="yellow";
+        } else if (change_color == pink) {
+            document.getElementById('navo').className = "pink_nav";
+            document.getElementById('a_body').className = 'pink_body';
+            document.cookie = "backcolor=pink";
+            storage.a="pink";
+        } else if (change_color == orange) {
+            document.getElementById('navo').className = "orange_nav";
+            document.getElementById('a_body').className = 'orange_body';
+            document.cookie = "backcolor=orange";
+            storage.a="orange";
+        }
+        console.log(storage);
+    }
+    if (strcookie[0] != null) {
+        if (strcookie[1] == "blue") {
+            document.getElementById('navo').className = "blue_nav";
+            document.getElementById('a_body').className = 'blue_body';
+        } else if (strcookie[1] == "yellow") {
+            document.getElementById('navo').className = "yellow_nav";
+            document.getElementById('a_body').className = 'yellow_body';
+        } else if (strcookie[1] == "pink") {
+            document.getElementById('navo').className = "pink_nav";
+            document.getElementById('a_body').className = 'pink_body';
+        } else if (strcookie[1] == "orange") {
+            document.getElementById('navo').className = "orange_nav";
+            document.getElementById('a_body').className = 'orange_body';
+        }
+    }
+    if (storage.a == "blue") {
+            document.getElementById('navo').className = "blue_nav";
+            document.getElementById('a_body').className = 'blue_body';
+        } else if (storage.a == "yellow") {
+            document.getElementById('navo').className = "yellow_nav";
+            document.getElementById('a_body').className = 'yellow_body';
+        } else if (storage.a == "pink") {
+            document.getElementById('navo').className = "pink_nav";
+            document.getElementById('a_body').className = 'pink_body';
+        } else if (storage.a == "orange") {
+            document.getElementById('navo').className = "orange_nav";
+            document.getElementById('a_body').className = 'orange_body';
+        }
+    console.log(storage);
+    </script>
+</body>
+
+</html>
